@@ -6,12 +6,12 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 11:14:30 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 13:54:01 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP.H
-#define PUSH_SWAP.H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -74,7 +74,9 @@ typedef struct s_push_swap
 } t_push_swap;
 
 
-
+void ft_push_back(t_list_c *root, t_elem data);
+void	ft_push_front(t_list_c *root, t_elem data);
+void	ft_pop_back(t_list_c *root);
 
 
 #endif
