@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 15:25:45 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 15:45:13 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,24 @@ int ft_find_index(int *tab, size_t len, int data)
 		i++;
 	}
 	return(-1);
+}
+
+void if_sort(int *tab, int len)
+{
+	int i;
+	int flag;
+
+	i = 0;
+	flag = 1;
+	while (i < len)
+	{
+		if (tab[i] > tab[i + 1])
+		{
+			flag = 0;
+			break;
+		}
+		i++;
+	}
+	if (flag)
+		exit(0);
 }
