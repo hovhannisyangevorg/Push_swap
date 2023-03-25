@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 16:01:43 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:13:48 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,26 @@ void	ft_pop_front(t_list_c *root)
 	root->head->prev->next = root->head->next;
 	root->head = root->head->next;
 	free(tmp);
+}
+
+/*
+* Creates a deep copy of a circular linked list.
+* @param list The circular linked list to be copied.
+* @return A pointer to the head of the copied list.
+*/
+t_list_c	*ft_deep_copy_list(t_list_c list)
+{
+	t_list_c copy = (t_list_c){0, 0};
+
+	t_node *tmp = list.head;
+
+	while (tmp)
+	{
+		ft_push_back(&copy, tmp->data);
+		tmp = tmp->next;
+		if (tmp == list.head)
+			break;
+	}
+	return(tmp);
 }
 

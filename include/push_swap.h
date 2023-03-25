@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 15:55:20 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:15:18 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,26 @@ typedef struct s_push_swap
 	t_list_c b;
 } t_push_swap;
 
-/*list method*/
+/*
+path method_list.c 
+*/
 void 	ft_push_back(t_list_c *root, t_elem data);
 void	ft_push_front(t_list_c *root, t_elem data);
 void	ft_pop_back(t_list_c *root);
 void	ft_pop_front(t_list_c *root);
+t_list_c	*ft_deep_copy_list(t_list_c list);
+
+/*
+path util.c 
+*/
+void	ft_free_argv(char **argv);
 int 	ft_find_index(int *tab, int len, int data);
 void 	if_sort(int *tab, int len);
+void 	ft_swap(int *a, int* b);
 
+/*
+path error.c 
+*/
 void panic(char* str);
 
 #endif
