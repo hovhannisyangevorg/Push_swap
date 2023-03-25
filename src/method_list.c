@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 13:54:53 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 14:09:04 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,21 @@ void	ft_pop_back(t_list_c *root)
 	last->prev->next = root->head;
 	root->head->prev = last->prev;
 	free(last);
+}
+
+void	ft_pop_front(t_list_c *root)
+{
+	if (root == 0 || root->head == 0)
+		return ;
+	if (root->head == root->head->prev)
+	{
+		free(root->head);
+		root->head = 0;
+		return ;
+	}
+	t_node *tmp = root->head;
+	root->head->next->prev = root->head->prev;
+	root->head->prev->next = root->head->next;
+	root->head = root->head->next;
+	free(tmp);
 }

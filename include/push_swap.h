@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 13:54:01 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 14:17:56 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
+#include "ft_printf.h"
 
 /*
 * STRUCT
@@ -73,10 +75,12 @@ typedef struct s_push_swap
 	t_list_c b;
 } t_push_swap;
 
-
-void ft_push_back(t_list_c *root, t_elem data);
+/*list method*/
+void 	ft_push_back(t_list_c *root, t_elem data);
 void	ft_push_front(t_list_c *root, t_elem data);
 void	ft_pop_back(t_list_c *root);
+void	ft_pop_front(t_list_c *root);
 
+void panic(char* str);
 
 #endif
