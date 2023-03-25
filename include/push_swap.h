@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 10:47:43 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 11:14:30 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 
 /*
 * STRUCT
-*
+*{
 * int data;
 * int index;
 * int	boolean;
+*}
 */
 typedef struct s_elem
 {
@@ -33,10 +34,11 @@ typedef struct s_elem
 
 /*
 * STRUCT
-*
+*{
 * t_elem data;
 * struct s_node *next;
 * struct s_node *prev;
+*}
 */
 typedef struct s_node
 {
@@ -47,9 +49,10 @@ typedef struct s_node
 
 /*
 * STRUCT
-*
+*{
 * t_node	*head;
 * int	size;
+*}
 */
 typedef struct s_list_c
 {
@@ -59,16 +62,16 @@ typedef struct s_list_c
 
 /*
 * STRUCT
-*
+*{
 * t_list_c a;
 * t_list_c b;
+*}
 */
 typedef struct s_push_swap
 {
 	t_list_c a;
 	t_list_c b;
 } t_push_swap;
-
 
 
 
