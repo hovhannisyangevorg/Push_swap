@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gehovhan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 10:40:09 by gehovhan         ###   ########.fr       */
+/*   Created: 2023/01/29 19:45:02 by gehovhan          #+#    #+#             */
+/*   Updated: 2023/01/29 19:45:13 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+t_list	*ft_lstnew(void *content)
 {
-	t_push_swap stack;
-	stack.a = (t_list_c){0, 0};
-	t_node *list1 = stack.a.head;
-	return(0);
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
 }

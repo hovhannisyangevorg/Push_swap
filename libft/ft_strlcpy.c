@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gehovhan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 10:40:09 by gehovhan         ###   ########.fr       */
+/*   Created: 2023/01/18 17:11:50 by gehovhan          #+#    #+#             */
+/*   Updated: 2023/01/18 18:02:07 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	t_push_swap stack;
-	stack.a = (t_list_c){0, 0};
-	t_node *list1 = stack.a.head;
-	return(0);
+	size_t	i;
+
+	if (!size)
+		return (ft_strlen(src));
+	i = 0;
+	while (src[i] && (i < size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = 0;
+	return (ft_strlen(src));
 }

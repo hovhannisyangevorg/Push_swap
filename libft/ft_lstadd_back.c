@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gehovhan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 10:40:09 by gehovhan         ###   ########.fr       */
+/*   Created: 2023/02/01 13:18:55 by gehovhan          #+#    #+#             */
+/*   Updated: 2023/02/01 13:19:07 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_push_swap stack;
-	stack.a = (t_list_c){0, 0};
-	t_node *list1 = stack.a.head;
-	return(0);
+	t_list	*tmp;
+
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	while (tmp -> next)
+		tmp = tmp -> next;
+	tmp -> next = new;
 }

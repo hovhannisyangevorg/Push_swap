@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   method_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 10:40:09 by gehovhan         ###   ########.fr       */
+/*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
+/*   Updated: 2023/03/25 10:42:14 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main()
+t_list_c *ft_push_back(t_list_c *root, t_elem data)
 {
-	t_push_swap stack;
-	stack.a = (t_list_c){0, 0};
-	t_node *list1 = stack.a.head;
-	return(0);
+	if (root == 0)
+		return ;
+	t_node *new = (t_node *)malloc(sizeof(t_node));;
+	if (new == 0)
+		return ;
+	root->size++;
+	if ()
 }

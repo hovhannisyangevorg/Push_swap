@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_overflow.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 10:40:09 by gehovhan         ###   ########.fr       */
+/*   Created: 2023/03/15 19:48:46 by gehovhan          #+#    #+#             */
+/*   Updated: 2023/03/15 19:51:40 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+int ft_ismultiply_overflow(int a, int b)
 {
-	t_push_swap stack;
-	stack.a = (t_list_c){0, 0};
-	t_node *list1 = stack.a.head;
-	return(0);
+   if (a == 0 || b == 0)
+      return 0;
+   int result = a * b;
+   if (a == result / b)
+      return 0;
+	return 1;
+}
+
+int ft_isadd_overflow(int a, int b)
+{
+   int result = a + b;
+   if (a > 0 && b > 0 && result < 0)
+		return 1;
+	if (a < 0 && b < 0 && result > 0)
+		return 1;
+	return 0;
 }
