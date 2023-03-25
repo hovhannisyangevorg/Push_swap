@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 15:45:58 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 15:55:20 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void 	ft_push_back(t_list_c *root, t_elem data);
 void	ft_push_front(t_list_c *root, t_elem data);
 void	ft_pop_back(t_list_c *root);
 void	ft_pop_front(t_list_c *root);
-int 	ft_find_index(int *tab, size_t len, int data);
+int 	ft_find_index(int *tab, int len, int data);
 void 	if_sort(int *tab, int len);
 
 void panic(char* str);

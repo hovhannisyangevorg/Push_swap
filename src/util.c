@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 15:45:13 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:09:53 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 *
-* RETURN void
+* RETURN (void)
 *
 * This function takes a null-terminated
 * array of strings (char **) and frees the memory allocated
@@ -31,23 +31,35 @@ void	ft_free_argv(char **argv)
 		free(argv[i]);
 	free(argv);	
 }
+
 /*
 *
+* RETURN (int)
+*
+* Searches for the first occurrence of the specified,
+* integer in an array of integers and returns its index.
 */
-int ft_find_index(int *tab, size_t len, int data)
+int ft_find_index(int *tab, int len, int data)
 {
 	int i;
 
 	i = 0;
-	while (tab && i < len)
+	while (tab && (i < len))
 	{
 		if (tab[i] == data)
-			return i;
+			return (i);
 		i++;
 	}
-	return(-1);
+	return (-1);
 }
 
+/*
+*
+* RETURN (void)
+*
+* Checks if an array of integers is
+* already sorted in increasing order.
+*/
 void if_sort(int *tab, int len)
 {
 	int i;
@@ -66,4 +78,18 @@ void if_sort(int *tab, int len)
 	}
 	if (flag)
 		exit(0);
+}
+
+/*
+*
+* RETURN (void)
+*
+* Swaps the values of two integer variables.
+*/
+void ft_swap(int *a, int* b)
+{
+	int tmp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

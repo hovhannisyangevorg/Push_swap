@@ -6,35 +6,16 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 14:09:04 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:01:43 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_push_back(t_list_c *root, t_elem data)
-// {
-// 	if (root == 0)
-// 		return ;
-// 	t_node *new = (t_node *)malloc(sizeof(t_node));;
-// 	if (new == 0)
-// 		return ;
-// 	root->size++;
-// 	new->data = data;
-// 	if (root->head == 0)
-// 	{
-// 		root->head = new;
-// 		new->next = new;
-// 		new->prev = new;
-// 		return ;
-// 	}
-// 	root->head->
-// }
-
 /*
 *
-* PARAM	t_node*
-* RETURN void
+* PARAM void	
+*
 * This is an implementation of a function,
 * that adds a new node to the end of a doubly-linked circular list.
 */
@@ -63,7 +44,7 @@ void ft_push_back(t_list_c *root, t_elem data)
 
 /*
 *
-* PARAM	t_node*
+* PARAM void	
 *
 * RETURN void
 * This is an implementation of a function,
@@ -95,7 +76,7 @@ void	ft_push_front(t_list_c *root, t_elem data)
 
 /*
 *
-* PARAM	t_node*
+* PARAM void
 *
 * RETURN void
 * This is an implementation of a function,
@@ -117,6 +98,13 @@ void	ft_pop_back(t_list_c *root)
 	free(last);
 }
 
+/*
+*
+* RETURN void
+*
+* This is an implementation of a function,
+* that removes the first node from a doubly-linked circular list.
+*/
 void	ft_pop_front(t_list_c *root)
 {
 	if (root == 0 || root->head == 0)
@@ -133,3 +121,4 @@ void	ft_pop_front(t_list_c *root)
 	root->head = root->head->next;
 	free(tmp);
 }
+
