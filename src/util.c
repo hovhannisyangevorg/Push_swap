@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 16:09:53 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/26 18:56:28 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,3 +93,144 @@ void ft_swap(int *a, int* b)
 	*a = *b;
 	*b = tmp;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// void merge(int *arr, int *left, int leftSize, int *right, int rightSize) 
+// {
+//     int l, r, k;
+//     l = 0;
+//     r = 0;
+//     k = 0;
+
+//     while (l < leftSize && r < rightSize) {
+//         if (left[l] <= right[r]) {
+//             arr[k] = left[l];
+//             l++;
+//         } else {
+//             arr[k] = right[r];
+//             r++;
+//         }
+//         k++;
+//     }
+//     while (l < leftSize) {
+//         arr[k] = left[l];
+//         l++;
+//         k++;
+//     }
+//     while (r < rightSize) {
+//         arr[k] = right[r];
+//         r++;
+//         k++;
+//     }
+// }
+
+// void mergeSort(int *arr, int size)
+// {
+//     if (size < 2)
+//         return ;
+	
+// 	int i = 0;
+//     int mid = size / 2;
+//     int left[mid];
+//     int right[size - mid];
+
+// 	while (i < mid)
+// 	{
+// 		left[i] = arr[i];
+// 		i++;
+// 	}
+// 	i = mid;
+//     while (i < size)
+// 	{
+//         right[i - mid] = arr[i];
+// 		i++;
+//     }
+//     mergeSort (left, mid);
+//     mergeSort (right, size - mid);
+//     merge(arr, left, mid, right, size - mid);
+// }
+
+
+
+// // int main() {
+// //     mergeSort(arr, size);
+// //     return 0;
+// // }
