@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 14:07:24 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:33:50 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,17 @@ void print_stack(t_list_c stack)
 	}
 	ft_printf("\n");
 	
+}
+
+int get_digits(int num)
+{
+	int i = 0;
+	while (num)
+	{
+		num = num / 10;
+		++i;
+	}
+	return i;	
 }
 
 /*

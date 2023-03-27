@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:29:27 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 15:25:28 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:31:12 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ void	ft_check_list_elem(char **sp, int len, t_list_c *list)
 */
 void	ft_check_argv(char **av, t_list_c *root)
 {
-	int		len = 0;
-	char *tmp;
-	char *argv = 0;
+	int		len;
+	char	*tmp;
+	char	*argv;
 
+	len = 0;
+	argv = 0;
 	while (*(++av))
 	{
 		tmp = argv;
@@ -73,19 +75,16 @@ void	ft_check_argv(char **av, t_list_c *root)
 	if (argv)
 	{
 		ft_split_argc(argv, len, root);
-		// char **sp = ft_split(argv, ' ');
-		// int i = -1;
-		// while (sp && sp[++i])
-		// 	++len;
-		// ft_check_list_elem(sp, len, root);
-		// ft_free_av(sp);
 	}
 }
-	
-void ft_split_argc(char *argv, int len, t_list_c *root)
+
+void	ft_split_argc(char *argv, int len, t_list_c *root)
 {
-	char **sp = ft_split(argv, ' ');
-	int i = -1;
+	int		i;
+	char	**sp;
+
+	sp = ft_split(argv, ' ');
+	i = -1;
 	while (sp && sp[++i])
 		++len;
 	ft_check_list_elem(sp, len, root);
