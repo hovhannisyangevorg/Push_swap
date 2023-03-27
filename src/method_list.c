@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 15:47:43 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:15:39 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,18 +127,59 @@ void	ft_pop_front(t_list_c *root)
 * @param list The circular linked list to be copied.
 * @return A pointer to the head of the copied list.
 */
-// t_list_c	*ft_deep_copy_list(t_list_c list)
+t_list_c ft_deep_copy_list(t_list_c lst)
+{
+	t_list_c copy = (t_list_c){0, 0};
+
+	t_node* tmp = lst.head;
+	while (tmp)
+	{
+		ft_push_back(&copy, tmp->data);
+		tmp = tmp->next;
+		if (tmp == lst.head)
+			break;
+	}
+	
+	return copy;
+}
+
+
+/*
+*
+* RETURN int
+*
+* @brief Searches for the first occurrence of a node in a linked list with a given index.
+*/
+int ft_list_find(t_list_c lst, int index)
+{
+	t_node *tmp = lst.head;
+	int max = 0;
+	
+	while (tmp)
+	{
+		tmp = tmp->next;
+		++max;
+		if(tmp == lst.head || tmp->data.index == index)
+			break;		
+	}
+	return (max);	
+}
+
+/*
+* iterator
+*/
+// t_node*	ft_iterate(t_node* it, int n)
 // {
-// 	t_list_c copy = (t_list_c){0, 0};
-
-// 	t_node* tmp = list.head;
-// 	while (tmp)
+// 	t_node* tmp = it;
+// 	if (n > 0)
 // 	{
-// 		ft_push_back(&copy, tmp->data);
-// 		tmp = tmp->next;
-// 		if (tmp == list.head)
-// 			break;
+// 		while (tmp && n--)
+// 			tmp = tmp->next;
 // 	}
-// 	return (copy);
+// 	else if (n < 0)
+// 	{
+// 		while (tmp && n++)
+// 			tmp = tmp->prev;
+// 	}
+// 	return tmp;
 // }
-
