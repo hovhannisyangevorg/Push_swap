@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 17:15:18 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:23:58 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,10 @@ t_list_c	*ft_deep_copy_list(t_list_c list);
 /*
 path util.c 
 */
-void	ft_free_argv(char **argv);
+void 	ft_free_av(char **args);
 int 	ft_find_index(int *tab, int len, int data);
-void 	if_sort(int *tab, int len);
+void	ft_if_sort(int *tab, int len);
+void 	print_stack(t_list_c stack);
 void 	ft_swap(int *a, int* b);
 
 /*
@@ -97,4 +98,23 @@ path error.c
 */
 void panic(char* str);
 
+/*
+path bubble_sort.c
+*/
+int		*ft_sorting_table(int *tab, size_t len);
+size_t	ft_support_atoi(const char *nptr, int sign, size_t i);
+
+/*
+* path atoi_push_swap.c
+*/
+size_t	ft_support_atoi(const char *nptr, int sign, size_t i);
+int		ft_atoi_push(const char *nptr);
+void	ft_error_not_digit(const char *str, size_t index);
+
+/*
+* path ft_check_argv.c
+*/
+void ft_check_list_elem(char **sp, int len, t_list_c *list);
+void	ft_check_argv(char **av, t_list_c *root);
+void ft_split_argc(char *argv, int len, t_list_c *root);
 #endif
