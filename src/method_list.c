@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 17:13:48 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 13:25:51 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 */
 void ft_push_back(t_list_c *root, t_elem data)
 {
-	if(root == 0)
-		return ;
+	if (root == 0)
+		return;
 	t_node *new = (t_node *)malloc(sizeof(t_node));
+	++root->size;
 	if (new == 0)
 		return ;
 	new->data = data;
-	root->size++;
 	if (root->head == 0)
 	{
 		root->head = new;
@@ -35,11 +35,11 @@ void ft_push_back(t_list_c *root, t_elem data)
 		new->prev = new;
 		return ;
 	}
-	t_node *last = root->head->prev;
+	t_node* last = root->head->prev;
 	last->next = new;
 	new->prev = last;
 	new->next = root->head;
-	root->head->prev = new;	
+	root->head->prev = new;
 }
 
 /*
@@ -127,19 +127,18 @@ void	ft_pop_front(t_list_c *root)
 * @param list The circular linked list to be copied.
 * @return A pointer to the head of the copied list.
 */
-t_list_c	*ft_deep_copy_list(t_list_c list)
-{
-	t_list_c copy = (t_list_c){0, 0};
+// t_list_c	*ft_deep_copy_list(t_list_c list)
+// {
+// 	t_list_c copy = (t_list_c){0, 0};
 
-	t_node *tmp = list.head;
-
-	while (tmp)
-	{
-		ft_push_back(&copy, tmp->data);
-		tmp = tmp->next;
-		if (tmp == list.head)
-			break;
-	}
-	return(tmp);
-}
+// 	t_node* tmp = list.head;
+// 	while (tmp)
+// 	{
+// 		ft_push_back(&copy, tmp->data);
+// 		tmp = tmp->next;
+// 		if (tmp == list.head)
+// 			break;
+// 	}
+// 	return (copy);
+// }
 

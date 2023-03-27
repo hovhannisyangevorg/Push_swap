@@ -6,30 +6,28 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/26 18:56:28 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:07:24 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-*
-* RETURN (void)
-*
+* PARAM
 * This function takes a null-terminated
 * array of strings (char **) and frees the memory allocated
 * for each string and for the array itself.
 */
-void	ft_free_argv(char **argv)
+void ft_free_av(char **args)
 {
 	int i;
-	
+
 	i = -1;
-	if (!argv || !*argv)
+	if (!args || !*args)
 		return ;
-	while (argv[++i])
-		free(argv[i]);
-	free(argv);	
+	while (args[++i])
+		free(args[i]);
+	free(args);	
 }
 
 /*
@@ -60,7 +58,7 @@ int ft_find_index(int *tab, int len, int data)
 * Checks if an array of integers is
 * already sorted in increasing order.
 */
-void if_sort(int *tab, int len)
+void	ft_if_sort(int *tab, int len)
 {
 	int i;
 	int flag;
@@ -78,6 +76,20 @@ void if_sort(int *tab, int len)
 	}
 	if (flag)
 		exit(0);
+}
+
+void print_stack(t_list_c stack)
+{
+	t_node* tmp = stack.head;
+	while(tmp)
+	{
+		ft_printf("%d ", tmp->data);
+		tmp = tmp->next;
+		if (tmp == stack.head)
+			break;
+	}
+	ft_printf("\n");
+	
 }
 
 /*

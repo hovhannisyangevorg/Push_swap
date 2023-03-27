@@ -6,20 +6,23 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/25 15:54:02 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:10:44 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main()
+int main(int ac, char **av)
 {
-	// if (ac == 2)
-	// 	panic("error: No arguments");
-	t_push_swap stack;
-	stack.a = (t_list_c){0, 0};
-	stack.b = (t_list_c){0, 0};
-	//ft_check_argv(av, &stack.a);
+	if (ac == 1)
+		return 0;
+	t_push_swap push_;
+	push_.a = (t_list_c){0,0};
+	push_.b = (t_list_c){0,0};
+	ft_check_argv(av, &push_.a);
+	print_stack(push_.a);
+	printf("%d \n", push_.a.head->data.data);
+
 	return(0);
 }
 
