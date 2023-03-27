@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 15:23:58 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:47:40 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,12 @@ typedef struct s_list_c
 *{
 * t_list_c a;
 * t_list_c b;
+* int ratio;
 *}
 */
 typedef struct s_push_swap
 {
+	int ratio;
 	t_list_c a;
 	t_list_c b;
 } t_push_swap;
@@ -91,6 +93,7 @@ void 	ft_free_av(char **args);
 int 	ft_find_index(int *tab, int len, int data);
 void	ft_if_sort(int *tab, int len);
 void 	print_stack(t_list_c stack);
+int		get_digits(int num);
 void 	ft_swap(int *a, int* b);
 
 /*
