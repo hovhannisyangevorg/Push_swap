@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 16:03:16 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:20:34 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(int ac, char **av)
 	print_stack(push_.a);
 	printf("%d \n", push_.a.head->data.data);
 	push_.ratio = push_.a.size / get_digits(push_.a.head);
+
 	
 	return(0);
 }
