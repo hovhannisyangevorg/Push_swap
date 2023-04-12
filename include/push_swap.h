@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/12 16:45:32 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:48:38 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,12 @@ void	rrr(t_list_c *stack_a, t_list_c *stack_b);
 */
 
 void	create_butterfly(t_push_swap *node);
+
+/*
+* path sorting_stack.c
+*/
+
+void	sorting_stack_one_to_two(t_push_swap *node);
+
 
 #endif
