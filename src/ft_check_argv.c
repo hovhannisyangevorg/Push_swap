@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:29:27 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 15:31:12 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:59:24 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ void	ft_check_list_elem(char **sp, int len, t_list_c *list)
 	while (++i < len)
 	{
 		index = ft_find_index(tab2, len, tab[i]);
-		ft_push_back (list, (t_elem){tab[i], index, 0});
+		ft_push_back (list, (t_elem){tab[i], index});
 	}
+	
+	
 	free(tab2);
 }
 

@@ -6,7 +6,7 @@
 #    By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 18:45:31 by gehovhan          #+#    #+#              #
-#    Updated: 2023/03/16 16:17:19 by gehovhan         ###   ########.fr        #
+#    Updated: 2023/04/12 16:56:24 by gehovhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LINKERS			= -L$(FT_LIB) -lft -L$(PRINTF_LIB) -lftprintf
 SRC_DIR			= src
 OBJ_DIR			= obj
 INCS			= -Iinclude -I$(FT_LIB) -I$(PRINTF_LIB)/include
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror 
 CC				= cc
 MK				= mkdir -p
 RM				= rm -rf

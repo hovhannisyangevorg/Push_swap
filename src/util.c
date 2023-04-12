@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 15:47:42 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:49:31 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void print_stack(t_list_c stack)
 	t_node* tmp = stack.head;
 	while(tmp)
 	{
-		ft_printf("%d ", tmp->data);
+		ft_printf("%d[%d] ", tmp->data.data, tmp->data.index);
 		tmp = tmp->next;
 		if (tmp == stack.head)
 			break;

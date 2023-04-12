@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/03/27 16:20:34 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:52:18 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,18 @@ int main(int ac, char **av)
 	push_.a = (t_list_c){0,0};
 	push_.b = (t_list_c){0,0};
 	ft_check_argv(av, &push_.a);
-	print_stack(push_.a);
-	printf("%d \n", push_.a.head->data.data);
-	push_.ratio = push_.a.size / get_digits(push_.a.head);
+	push_.ratio = (push_.a.size / get_digits(push_.a.size));
 
-	
+	printf("aaaaaaa\n");
+	print_stack(push_.a);
+	printf("bbbbbb\n");
+	print_stack(push_.b);
+	create_butterfly(&push_);
+	printf("aaaaaaa\n");
+	print_stack(push_.a);
+	printf("bbbbbb\n");
+	print_stack(push_.b);
+
 	return(0);
 }
 
