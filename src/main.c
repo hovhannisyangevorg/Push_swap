@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 14:49:02 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:01:32 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ int main(int ac, char **av)
 	ft_check_argv(av, &push_.a);
 	push_.ratio = (push_.a.size / get_digits(push_.a.size));
 
-	printf("-----a-----\n");
-	print_stack(push_.a);
-	printf("-----b-----\n");
 	print_stack(push_.b);
 
 	if(push_.a.size <= 5)
@@ -32,12 +29,13 @@ int main(int ac, char **av)
 	else
 	{
 		create_butterfly(&push_);
+		butterfly_sort(&push_);
 	}
 
-	printf("-----a-----\n");
-	print_stack(push_.a);
-	printf("-----b-----\n");
-	print_stack(push_.b);
+	// printf("-----a-----\n");
+	// print_stack(push_.a);
+	// printf("-----b-----\n");
+	// print_stack(push_.b);
 
 	
 	return(0);

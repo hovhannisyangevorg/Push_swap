@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 14:11:10 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:01:20 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,4 +157,11 @@ void	sorting_stack_one_to_five(t_push_swap *node);
 
 void	create_butterfly(t_push_swap *node);
 
+
+/*
+* path butterfly_sort.c
+*/
+
+void	butterfly_sort(t_push_swap *node);
+int	list_find_max_index(t_push_swap *node);
 #endif

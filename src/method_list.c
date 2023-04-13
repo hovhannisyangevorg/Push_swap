@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 14:49:07 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:00:45 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,14 +139,13 @@ t_list_c ft_deep_copy_list(t_list_c lst)
 		if (tmp == lst.head)
 			break;
 	}
-	
 	return copy;
 }
 
 
 /*
 *
-* RETURN int
+* RETURN t_node
 *
 * @brief Searches for the first occurrence of a node in a linked list with a given index.
 */
