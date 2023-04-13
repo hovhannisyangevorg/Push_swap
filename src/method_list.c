@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/12 16:59:08 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:34:16 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ t_list_c ft_deep_copy_list(t_list_c lst)
 *
 * @brief Searches for the first occurrence of a node in a linked list with a given index.
 */
-int ft_list_find(t_list_c lst, int index)
+t_node *ft_list_find(t_list_c lst, int index)   /////////////////// popoxutyun funkciai het
 {
 	t_node *tmp = lst.head;
 	int max = 0;
@@ -162,7 +162,7 @@ int ft_list_find(t_list_c lst, int index)
 		if(tmp == lst.head || tmp->data.index == index)
 			break;		
 	}
-	return (max);	
+	return (tmp);	
 }
 
 /*

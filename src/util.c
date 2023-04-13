@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/12 18:49:31 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:58:24 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_if_sort(int *tab, int len)
 
 	i = 0;
 	flag = 1;
-	while (i < len)
+	while (i < (len - 1))
 	{
 		if (tab[i] > tab[i + 1])
 		{
