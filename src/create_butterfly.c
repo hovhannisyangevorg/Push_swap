@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:34:07 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/12 18:53:30 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:13:47 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	create_butterfly(t_push_swap *node)
 		index = node->a.head->data.index;
 		if (index <= i)
 		{
-
 			push(&node->a, &node->b);
 			rotate(&node->b);
 			++i;

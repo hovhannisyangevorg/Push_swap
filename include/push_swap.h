@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 12:37:52 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:11:10 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void 	ft_free_av(char **args);
 int 	ft_find_index(int *tab, int len, int data);
 void	ft_if_sort(int *tab, int len);
 void 	print_stack(t_list_c stack);
-int get_digits(int num);
+int 	get_digits(int num);
 void 	ft_swap(int *a, int* b);
 
 /*
@@ -140,18 +140,21 @@ void	rr(t_list_c *stack_a, t_list_c *stack_b);
 void	reverse_rotate(t_list_c *stack);
 void	rrr(t_list_c *stack_a, t_list_c *stack_b);
 
-/*
-* path create_butterfly.c
-*/
-
-void	create_butterfly(t_push_swap *node);
 
 /*
 * path sorting_stack.c
 */
 
+void	sorting_stack_max_five(t_push_swap *node);
 void	sorting_stack_one_to_two (t_push_swap *node);
 void	sorting_stack_one_to_three (t_push_swap *node);
 void	sorting_stack_one_to_four (t_push_swap *node);
+void	sorting_stack_one_to_five(t_push_swap *node);
+
+/*
+* path create_butterfly.c
+*/
+
+void	create_butterfly(t_push_swap *node);
 
 #endif

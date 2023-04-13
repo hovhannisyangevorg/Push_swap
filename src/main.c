@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 12:27:36 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:44:52 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,14 @@ int main(int ac, char **av)
 	print_stack(push_.a);
 	printf("-----b-----\n");
 	print_stack(push_.b);
-	
-	//create_butterfly(&push_);
-	// sorting_stack_one_to_two(&push_);
-	sorting_stack_one_to_four(&push_);
-	
+
+	if(push_.a.size <= 5)
+		sorting_stack_max_five(&push_);
+	else
+	{
+		create_butterfly(&push_);
+	}
+
 	printf("-----a-----\n");
 	print_stack(push_.a);
 	printf("-----b-----\n");
