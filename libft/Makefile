@@ -6,35 +6,44 @@
 #    By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 21:12:42 by gehovhan          #+#    #+#              #
-#    Updated: 2023/03/13 23:32:09 by gehovhan         ###   ########.fr        #
+#    Updated: 2023/04/13 19:16:45 by gehovhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= $(wildcard *.c)
-OBJS			= $(patsubst %.c, %.o, $(SRCS))
+SRC_DIR			= src
+OBJ_DIR			= obj
+INC_DIR			= include
+SRCS			= $(wildcard $(SRC_DIR)/*.c)
+HEADERS			= $(wildcard $(INC_DIR)/*.h)
+OBJS			= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 CC				= cc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
-
+RM				= rm -rf
+INCS			= -I$(INC_DIR)
+CFLAGS			= -Wall -Wextra -Werror 
+AR				= ar rcs 
 NAME			= libft.a
+MK				= mkdir -p
 
 .DEFAULT_GOAL	=	all
 
-%.o:	%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
+	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
-all:			$(NAME)
+$(OBJ_DIR): $(SRC_DIR)
+	$(MK) $@
 
-$(NAME) :		$(OBJS)
-				ar rcs $(NAME) $?
+all:		$(OBJ_DIR)	$(NAME)
 
-clean :
-				$(RM) $(OBJS)
+$(NAME):	$(OBJS)
+				$(AR) $(NAME) $?
 
-fclean :		clean
+clean:
+				$(RM) $(OBJ_DIR)
+
+fclean:		clean
 				$(RM) $(NAME)
 
-re :			fclean $(NAME)
+re:			fclean all
 
 
 

@@ -6,40 +6,56 @@
 #    By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 18:45:31 by gehovhan          #+#    #+#              #
-#    Updated: 2023/04/12 16:56:24 by gehovhan         ###   ########.fr        #
+#    Updated: 2023/04/16 20:02:21 by gehovhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= push_swap
-
-FT_LIB			= libft
-PRINTF_LIB		= ft_printf
-LIBS			= $(FT_LIB)/libft.a $(PRINTF_LIB)/libprintf.a
-LINKERS			= -L$(FT_LIB) -lft -L$(PRINTF_LIB) -lftprintf
+CHECKER			= checker
+INC_DIR			= include
 SRC_DIR			= src
+MAIN_DIR		= main
+OBJ_DIRS		= obj obj/checker obj/main
 OBJ_DIR			= obj
-INCS			= -Iinclude -I$(FT_LIB) -I$(PRINTF_LIB)/include
+FT_LIB			= libft
+LIBS			= $(FT_LIB)/libft.a
+LINKERS			= -L$(FT_LIB) -lft
+ALL_SRCS		= $(wildcard $(SRC_DIR)/*.c)
+HEADERS			= $(wildcard $(INC_DIR)/*.h)
+CHECK_SRCS		= $(filter-out $(SRC_DIR)/main.c, $(ALL_SRCS))
+MAIN_SRCS		= $(filter-out $(SRC_DIR)/ft_checker.c, $(ALL_SRCS))
+INCS			= -I$(INC_DIR) -I$(FT_LIB)/include
 CFLAGS			= -Wall -Wextra -Werror 
 CC				= cc
 MK				= mkdir -p
 RM				= rm -rf
-SRCS			= $(wildcard $(SRC_DIR)/*.c)
-OBJS			= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+MAIN_OBJS		= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/$(MAIN_DIR)/%.o, $(MAIN_SRCS))
+CHECK_OBJS		= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/$(CHECKER)/%.o, $(CHECK_SRCS))
 
-all:		$(LIBS) $(OBJ_DIR) $(NAME)
+all:		$(LIBS) $(OBJ_DIRS) $(NAME)
 
-$(NAME) :	$(OBJS)
-			$(CC) $(CFLAGS) $(INCS) -o $@ $(OBJS) $(LINKERS)
+bonus:		$(LIBS) $(OBJ_DIRS) $(CHECKER)
 
+$(NAME):	$(MAIN_OBJS)
+			$(CC) $(CFLAGS) $(INCS) -o $@ $(MAIN_OBJS) $(LINKERS)
+
+$(CHECKER):	$(CHECK_OBJS)
+			$(CC) $(CFLAGS) $(INCS) -DISCHECKER -o $@ $(CHECK_OBJS) $(LINKERS)
 
 $(FT_LIB)/libft.a:
 	$(MAKE) -C $(FT_LIB)
 
-$(PRINTF_LIB)/libprintf.a:
-	$(MAKE) -C $(PRINTF_LIB)
+$(OBJ_DIR)/$(CHECKER): $(SRC_DIR)
+	$(MK) $@
+	
+$(OBJ_DIR)/$(MAIN_DIR): $(SRC_DIR)
+	$(MK) $@
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+$(OBJ_DIR)/$(MAIN_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
 			$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+
+$(OBJ_DIR)/$(CHECKER)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
+	$(CC) $(CFLAGS) $(INCS) -DISCHECKER -c $< -o $@
 
 $(OBJ_DIR): 	$(SRC_DIR)
 				$(MK) $(OBJ_DIR)
@@ -47,14 +63,14 @@ $(OBJ_DIR): 	$(SRC_DIR)
 clean:
 			$(RM) $(OBJ_DIR)
 			$(MAKE) -C $(FT_LIB) clean
-			$(MAKE) -C $(PRINTF_LIB) clean
+
 fclean:		clean
 			$(RM) $(NAME)
+			$(RM) $(CHECKER)
 			$(MAKE) -C $(FT_LIB) fclean
-			$(MAKE) -C $(PRINTF_LIB) fclean
 
-re:			fclean all
+re:			fclean all bonus
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
-.SILENT:
+# .SILENT:

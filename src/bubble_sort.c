@@ -6,18 +6,17 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:19:09 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 14:48:46 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:12:33 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
+* RETURN int
+*
 * Sorts an array of integers in ascending order using 
-* the Selection Sort algorithm.
-* @param tab Pointer to the integer array to be sorted
-* @param len Length of the array to be sorted
-* @return void
+* the Bubble Sort algorithm.
 */
 int	*ft_sorting_table(int *tab, size_t len)
 {

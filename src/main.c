@@ -6,215 +6,83 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:35:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 16:01:32 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:56:58 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+/*
+* RETURN int
+*
+* Returns the integer value of the base 2 logarithm of the given integer.
+*/
+int	get_log2(int n)
 {
+	int	i;
+	int	m;
+
+	i = 2;
+	m = 0;
+	while (i <= n)
+	{
+		++m;
+		i <<= 1;
+	}
+	return (m);
+}
+
+/*
+* RETURN int
+*
+* Returns the integer square root of the given integer, rounded down
+*/
+int	get_sqrt(int n)
+{
+	int	i;
+	int	num;
+
+	num = n;
+	i = 2;
+	while (num > i * i)
+		++i;
+	return (i);
+}
+
+int	main(int ac, char **av)
+{
+	t_push_swap		push_;
+
 	if (ac == 1)
-		return 0;
-	t_push_swap push_;
-	push_.a = (t_list_c){0,0};
-	push_.b = (t_list_c){0,0};
+		return (0);
+	push_.a = (t_list_c){0, 0};
+	push_.b = (t_list_c){0, 0};
 	ft_check_argv(av, &push_.a);
-	push_.ratio = (push_.a.size / get_digits(push_.a.size));
-
-	print_stack(push_.b);
-
-	if(push_.a.size <= 5)
+	push_.ratio = get_sqrt(push_.a.size) + get_log2(push_.a.size) - 1;
+	if (push_.a.size <= 5)
 		sorting_stack_max_five(&push_);
 	else
 	{
 		create_butterfly(&push_);
 		butterfly_sort(&push_);
 	}
-
-	// printf("-----a-----\n");
-	// print_stack(push_.a);
-	// printf("-----b-----\n");
-	// print_stack(push_.b);
-
-	
-	return(0);
+	return (0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// int main()
-// {
-// 	t_push_swap stack;
-// 	stack.a = (t_list_c){0, 0};
-// 	stack.b = (t_list_c){0, 0};
-
-// 	t_list_c list1 = stack.a;
-// 	t_list_c list2 = stack.b;
-// 	ft_push_front(&list1, (t_elem){10, 0, 0});
-// 	ft_push_front(&list1, (t_elem){20, 0, 0});
-// 	ft_push_front(&list1, (t_elem){30, 0, 0});
-// 	ft_push_front(&list1, (t_elem){40, 0, 0});
-// 	ft_push_front(&list1, (t_elem){50, 0, 0});
-// 	t_node *tab = list1.head;
-// 	while (tab)
-// 	{
-// 		printf("%d, ", tab->data.data);
-// 		tab = tab->next;
-// 		if (tab == list1.head)
-// 			break;
-// 	}
-	
-// 	return(0);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// int main(int ac, char **av)
-// {
-// 	t_push_swap stack;
-// 	stack.a = (t_list_c){0, 0};
-// 	stack.b = (t_list_c){0, 0};
-
-// 	t_list_c list1 = stack.a;
-
-// 	ft_push_back(&list1, (t_elem){10, 0, 0});
-// 	ft_push_back(&list1, (t_elem){20, 0, 0});
-// 	ft_push_back(&list1, (t_elem){30, 0, 0});
-// 	ft_push_back(&list1, (t_elem){40, 0, 0});
-// 	ft_push_back(&list1, (t_elem){50, 0, 0});
-	
-// 	t_node *tab = list1.head;
-// 	while (tab)
-// 	{
-// 		printf("%d, ", tab->data.data);
-// 		tab = tab->next;
-// 		if (tab == list1.head)
-// 			break;
-// 	}
-	
-// 	return(0);
-// }
+#if 0
+
+void	print_stack(t_list_c stack)
+{
+	t_node	*tmp;
+
+	tmp = stack.head;
+	while (tmp)
+	{
+		printf("%d[%d] ", tmp->data.data, tmp->data.index);
+		tmp = tmp->next;
+		if (tmp == stack.head)
+			break ;
+	}
+	printf("\n");
+}
+#endif

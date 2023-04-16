@@ -6,26 +6,32 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 19:02:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 14:48:40 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:10:14 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+* RETURN void
+*
+* This function checks if the character at the specified 
+* index in a string is a digit or not.
+*/
 void	ft_error_not_digit(const char *str, size_t index )
 {
 	while (str[index] != '\0')
 	{
-		if(!ft_isdigit(str[index]))
-			panic ("error: Not a Number");
+		if (!ft_isdigit(str[index]))
+			panic("error: Not a Number");
 		index++;
 	}
 }
 
 /*
+* RETURN int
 *
-* convert argument string to integer
-*
+* Convert argument string to integer
 */
 int	ft_atoi_push(const char *nptr)
 {
@@ -51,7 +57,9 @@ int	ft_atoi_push(const char *nptr)
 }
 
 /*
-* check every operation 
+* RETURN size_t
+*
+* Check every operation 
 */
 size_t	ft_support_atoi(const char *nptr, int sign, size_t i)
 {

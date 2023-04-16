@@ -6,43 +6,44 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:34:07 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/13 14:48:53 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:39:24 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
+* RETURN void
 *
-* Create Butterfly from a stack
-* 
+* Creates a butterfly pattern in the stacks using the input t_push_swap node.
+* The function operates on the stack 'a' of the node, 
+* And pushes elements to the stack 'b', as required by the butterfly pattern.
+* The sub-sections of the top and bottom sections alternate, 
+* Creating a pattern that resembles a butterfly.
 */
 void	create_butterfly(t_push_swap *node)
 {
-	int i = 0;
-	int index;
-	int len = node->a.size;
+	int	i;
+	int	index;
+	int	len;
 
-	while ( i < len )
+	i = 0;
+	len = node->a.size;
+	while (i < len)
 	{
 		index = node->a.head->data.index;
 		if (index <= i)
 		{
-			push(&node->a, &node->b);
-			rotate(&node->b);
+			push(&node->a, &node->b, STACK_A);
+			rotate(&node->b, STACK_B);
 			++i;
 		}
 		else if (index <= (i + node->ratio))
 		{
-			push (&node->a, &node->b);
+			push (&node->a, &node->b, STACK_A);
 			++i;
 		}
 		else
-			rotate(&node->a);
+			rotate(&node->a, STACK_A);
 	}
 }
-
-
-
-
-
