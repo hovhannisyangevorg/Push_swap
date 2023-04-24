@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:00:41 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:28:40 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,22 @@
 # endif
 
 /*
+*
+* type aliases for structures
+*/
+typedef struct s_elem		t_elem;
+typedef struct s_node		t_node;
+typedef struct s_list_c		t_list_c;
+typedef struct s_push_swap	t_push_swap;
+
+/*
+*
+* list cleanup function declaration
+*
+*/
+typedef void				(*t_list_cleanup)();
+
+/*
 * STRUCT
 *{
 * int data;
@@ -35,11 +51,11 @@
 * int	boolean;
 *}
 */
-typedef struct s_elem
+struct s_elem
 {
 	int	data;
 	int	index;
-}	t_elem;
+};
 
 /*
 * STRUCT
@@ -49,12 +65,12 @@ typedef struct s_elem
 * struct s_node *prev;
 *}
 */
-typedef struct s_node
+struct s_node
 {
 	t_elem			data;
 	struct s_node	*next;
 	struct s_node	*prev;
-}	t_node;
+};
 
 /*
 * STRUCT
@@ -63,11 +79,11 @@ typedef struct s_node
 * int	size;
 *}
 */
-typedef struct s_list_c
+struct s_list_c
 {
 	int		size;
 	t_node	*head;
-}	t_list_c;
+};
 
 /*
 * STRUCT
@@ -77,12 +93,12 @@ typedef struct s_list_c
 * int ratio;
 *}
 */
-typedef struct s_push_swap
+struct s_push_swap
 {
 	int			ratio;
 	t_list_c	a;
 	t_list_c	b;
-}	t_push_swap;
+};
 
 /*
 path method_list.c 
@@ -90,11 +106,12 @@ path method_list.c
 
 void		ft_push_back(t_list_c *root, t_elem data);
 void		ft_push_front(t_list_c *root, t_elem data);
-void		ft_pop_back(t_list_c *root);
-void		ft_pop_front(t_list_c *root);
+void		ft_pop_back(t_list_c *root, t_list_cleanup cleanup);
+void		ft_pop_front(t_list_c *root, t_list_cleanup cleanup);
 t_node		*ft_iterate(t_node *it, int n);
 t_node		*ft_list_find(t_list_c lst, int index);
 t_list_c	ft_deep_copy_list(t_list_c lst);
+void		ft_list_clear(t_list_c *lst, t_list_cleanup cleanup);
 
 /*
 path util.c 
@@ -103,9 +120,9 @@ path util.c
 int			ft_find_index(int *tab, int len, int data);
 int			get_digits(int num);
 void		ft_free_av(char **args);
-void		ft_if_sort(int *tab, int len);
 void		print_stack(t_list_c stack);
 void		ft_swap(int *a, int *b);
+int			ft_if_sort(int *tab, int len);
 
 /*
 path error.c 
@@ -118,7 +135,6 @@ path bubble_sort.c
 */
 
 int			*ft_sorting_table(int *tab, size_t len);
-size_t		ft_support_atoi(const char *nptr, int sign, size_t i);
 
 /*
 * path atoi_push_swap.c

@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 17:28:02 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:52:16 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:24:08 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_node	*ft_list_find(t_list_c lst, int index)
 	}
 	return (tmp);
 }
+
 /*
 * RETURN int
 *
@@ -61,4 +62,10 @@ int	if_sort_list(t_push_swap *root)
 			break ;
 	}
 	return (flag);
+}
+
+void	ft_list_clear(t_list_c *lst, t_list_cleanup cleanup)
+{
+	while (lst->size)
+		ft_pop_back(lst, cleanup);
 }

@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:27:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:49:26 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:10:31 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ft_push_front(t_list_c *root, t_elem data)
 * This is an implementation of a function,
 * that removes the last node from a doubly-linked circular list.
 */
-void	ft_pop_back(t_list_c *root)
+void	ft_pop_back(t_list_c *root, t_list_cleanup cleanup)
 {
 	t_node	*last;
 
@@ -93,14 +93,16 @@ void	ft_pop_back(t_list_c *root)
 		return ;
 	if (root->head->next == root->head)
 	{
-		free(root->head);
+		cleanup(root->head);
 		root->head = 0;
+		root->size = 0;
 		return ;
 	}
 	last = root->head->prev;
 	last->prev->next = root->head;
 	root->head->prev = last->prev;
-	free(last);
+	--root->size;
+	cleanup(last);
 }
 
 /*
@@ -109,7 +111,7 @@ void	ft_pop_back(t_list_c *root)
 * This is an implementation of a function,
 * that removes the first node from a doubly-linked circular list.
 */
-void	ft_pop_front(t_list_c *root)
+void	ft_pop_front(t_list_c *root, t_list_cleanup cleanup)
 {
 	t_node	*tmp;
 
@@ -117,15 +119,17 @@ void	ft_pop_front(t_list_c *root)
 		return ;
 	if (root->head == root->head->prev)
 	{
-		free(root->head);
+		cleanup(root->head);
 		root->head = 0;
+		root->size = 0;
 		return ;
 	}
 	tmp = root->head;
 	root->head->next->prev = root->head->prev;
 	root->head->prev->next = root->head->next;
 	root->head = root->head->next;
-	free(tmp);
+	--root->size;
+	cleanup(tmp);
 }
 
 /*

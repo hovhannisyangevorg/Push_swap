@@ -6,14 +6,16 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:12:31 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/14 22:22:42 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:19:36 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <libc.h>
 
 /*
 * RETURN void
+*
 * Structure NameThe code provided defines
 * A function called "panic".
 * That takes a string (char*) argument named "str".
@@ -24,5 +26,5 @@ void	panic(char *str)
 {
 	write (2, str, ft_strlen(str));
 	write (2, "\n", 1);
-	exit (1);
+	exit (EXIT_FAILURE);
 }

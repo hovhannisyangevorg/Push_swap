@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:47:13 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 14:11:11 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:23:32 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_free_av(char **args)
 	int	i;
 
 	i = -1;
-	if (!args || !*args)
+	if (!args)
 		return ;
 	while (args[++i])
 		free(args[i]);
@@ -58,7 +58,7 @@ int	ft_find_index(int *tab, int len, int data)
 * Checks if an array of integers is
 * already sorted in increasing order.
 */
-void	ft_if_sort(int *tab, int len)
+int	ft_if_sort(int *tab, int len)
 {
 	int		i;
 	int		flag;
@@ -74,8 +74,7 @@ void	ft_if_sort(int *tab, int len)
 		}
 		i++;
 	}
-	if (flag)
-		exit(0);
+	return (flag);
 }
 
 /*

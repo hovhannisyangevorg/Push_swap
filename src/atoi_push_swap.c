@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 19:02:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:10:14 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:21:04 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ size_t	ft_support_atoi(const char *nptr, int sign, size_t i)
 		if (ft_ismultiply_overflow(res, 10))
 			panic ("error: Overflow error");
 		mult = res * 10;
-		if (ft_isadd_overflow(mult, (nptr[i] - '0')))
+		if (ft_isadd_overflow(mult, (nptr[i] - '0'), sign))
 			panic ("add Overflow error");
 		res = res * 10 + (nptr[i] - '0');
 		++i;
