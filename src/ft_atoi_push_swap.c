@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_push_swap.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_push_swap.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 19:02:12 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/24 18:21:04 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 21:45:36 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_error_not_digit(const char *str, size_t index )
 	while (str[index] != '\0')
 	{
 		if (!ft_isdigit(str[index]))
-			panic("error: Not a Number");
+			ft_panic("error: Not a Number");
 		index++;
 	}
 }
@@ -70,15 +70,15 @@ size_t	ft_support_atoi(const char *nptr, int sign, size_t i)
 	while ('0' <= nptr[i] && nptr[i] <= '9')
 	{
 		if (ft_ismultiply_overflow(res, 10))
-			panic ("error: Overflow error");
+			ft_panic ("error: Overflow error");
 		mult = res * 10;
 		if (ft_isadd_overflow(mult, (nptr[i] - '0'), sign))
-			panic ("add Overflow error");
+			ft_panic ("add Overflow error");
 		res = res * 10 + (nptr[i] - '0');
 		++i;
 	}
 	if (ft_ismultiply_overflow(res, sign))
-		panic ("error: Overflow error");
+		ft_panic ("error: Overflow error");
 	res *= sign;
 	return (res);
 }

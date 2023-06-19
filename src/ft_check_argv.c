@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:29:27 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/06/19 20:19:41 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 22:02:31 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_check_list_elem(char **sp, int len, t_list_c *list, int is_checker)
 	is_sorted = 1;
 	tab = (int *) malloc(sizeof(int) * len);
 	if (!tab)
-		panic("error: Couldn't allocate memory");
+		ft_panic("error: Couldn't allocate memory");
 	while (sp && sp[++i])
 		tab[j++] = ft_atoi_push(sp[i]);
 	if (!is_checker)
@@ -106,7 +106,7 @@ void	ft_split_argc(char *argv, int len, t_list_c *root)
 
 	sp = ft_split(argv, ' ');
 	if (!sp || !sp[0])
-		panic("error: no enough arguments");
+		ft_panic("error: no enough arguments");
 	i = -1;
 	while (sp && sp[++i])
 		++len;

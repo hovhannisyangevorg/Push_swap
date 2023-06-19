@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:48:33 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:20:05 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 22:02:37 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 * Stack A in sorted order using a combination of push, 
 * rotate and reverse_rotate operations.
 */
-void	butterfly_sort(t_push_swap *node)
+void	ft_butterfly_sort(t_push_swap *node)
 {
 	int	index;
 
 	while (node->b.head)
 	{
 		index = node->b.size - 1;
-		if (list_find_max_index(node) == 1)
+		if (ft_list_find_max_index(node) == 1)
 		{
 			while (node->b.head && node->b.head->data.index != index)
 				rotate(&node->b, STACK_B);
@@ -49,7 +49,7 @@ void	butterfly_sort(t_push_swap *node)
 * If the maximum index is found in the first half of the stack, 
 * It returns 1. Otherwise, it returns 0.
 */
-int	list_find_max_index(t_push_swap *node)
+int	ft_list_find_max_index(t_push_swap *node)
 {
 	int		len;
 	int		max_index;

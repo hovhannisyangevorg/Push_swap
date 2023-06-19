@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_butterfly.c                                 :+:      :+:    :+:   */
+/*   ft_create_butterfly.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:34:07 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:39:24 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 22:05:22 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 * The sub-sections of the top and bottom sections alternate, 
 * Creating a pattern that resembles a butterfly.
 */
-void	create_butterfly(t_push_swap *node)
+void	ft_create_butterfly(t_push_swap *node)
 {
 	int	i;
 	int	index;

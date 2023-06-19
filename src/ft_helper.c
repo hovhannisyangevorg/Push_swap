@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper.c                                           :+:      :+:    :+:   */
+/*   ft_helper.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 17:45:04 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/24 18:24:18 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 22:04:47 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sorting_stack_one_to_five_helper(t_push_swap *node, t_node *max)
 *
 * Helper this function push().
 */
-void	push_helper(t_list_c *stack_b, t_node **elem, t_node **last)
+void	ft_push_helper(t_list_c *stack_b, t_node **elem, t_node **last)
 {
 	if (stack_b->head == 0)
 	{

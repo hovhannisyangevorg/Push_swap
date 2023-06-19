@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:23:34 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:46:25 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 22:07:44 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_checker_next_bonus(t_push_swap *root, char *line)
 	else if (!ft_strncmp(line, "rrr\n", 4))
 		rrr(&root->a, &root->b);
 	else
-		panic("error: command not found");
+		ft_panic("error: command not found");
 }
 
 int	main(int ac, char **av)

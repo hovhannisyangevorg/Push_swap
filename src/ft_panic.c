@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:12:31 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/24 18:19:36 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 21:46:24 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 * The function writes the contents of the 
 * String to standard error (file descriptor 2) 
 */
-void	panic(char *str)
+void	ft_panic(char *str)
 {
 	write (2, str, ft_strlen(str));
 	write (2, "\n", 1);

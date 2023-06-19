@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 17:39:45 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/16 19:58:50 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 21:47:58 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	push(t_list_c *stack_a, t_list_c *stack_b, int which)
 	last->next = stack_a->head->next;
 	stack_a->head->next->prev = last;
 	stack_a->head = stack_a->head->next;
-	push_helper(stack_b, &elem, &last);
+	ft_push_helper(stack_b, &elem, &last);
 	if (stack_a->size == 0)
 		stack_a->head = 0;
 	if (which == STACK_A && !CHECKER)
