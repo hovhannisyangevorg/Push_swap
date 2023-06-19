@@ -6,7 +6,7 @@
 #    By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 18:45:31 by gehovhan          #+#    #+#              #
-#    Updated: 2023/04/16 20:02:21 by gehovhan         ###   ########.fr        #
+#    Updated: 2023/06/19 20:22:12 by gehovhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,4 +73,4 @@ re:			fclean all bonus
 
 .PHONY: all clean fclean re bonus
 
-# .SILENT:
+.SILENT:

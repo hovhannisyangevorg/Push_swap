@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:29:27 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/24 18:23:06 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 20:19:41 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	ft_check_list_elem(char **sp, int len, t_list_c *list, int is_checker)
 		tab[j++] = ft_atoi_push(sp[i]);
 	if (!is_checker)
 		is_sorted = ft_if_sort(tab, len);
-	tab2 = ft_sorting_table(tab, len);
+	tab2 = ft_sort_with_merg(tab,len);
+	
 	if (!is_checker && is_sorted)
 	{
 		free(tab);

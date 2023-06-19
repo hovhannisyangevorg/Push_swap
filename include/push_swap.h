@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/04/24 18:28:40 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 20:20:02 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,11 +131,12 @@ path error.c
 void		panic(char *str);
 
 /*
-path bubble_sort.c
+path ft_marg_sort.c
 */
 
-int			*ft_sorting_table(int *tab, size_t len);
-
+void ft_merge_sort(int *tab, int l, int r);
+void ft_merge(int *tab, int l, int m, int r);
+int	*ft_sort_with_merg(int *tab, int len);
 /*
 * path atoi_push_swap.c
 */
