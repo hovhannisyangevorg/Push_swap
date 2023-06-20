@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_marg_sort.c                                     :+:      :+:    :+:   */
+/*   ft_merg_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:19:09 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/06/20 13:42:18 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:26:16 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdbool.h>
 
-void ft_merge(int *tab, int l, int m, int r)
+static void	ft_tabcpy(int *tab1, int *tab2, int len, int point)
+{
+	int i;
+
+	i = -1;
+	while (++i < len)
+		tab1[i] = tab2[point + i];
+}
+
+void	ft_merge(int *tab, int l, int m, int r)
 {
 	int i, j, k;
 	int n1 = m - l + 1;
 	int n2 = r - m;
 
-	int L[n1], R[n2];
+	int	L[n1];
+	int	R[n2];
 
-	for (i = 0; i < n1; i++)
-		L[i] = tab[l + i];
-	for (j = 0; j < n2; j++)
-		R[j] = tab[m + 1 + j];
+	ft_tabcpy(L, tab, n1, l);
+	ft_tabcpy(R, tab, n2, m+1);
 
 	i = 0;
 	j = 0;
@@ -43,7 +51,7 @@ void ft_merge(int *tab, int l, int m, int r)
 		}
 		k++;
 	}
-
+	
 	while (i < n1)
     {
 		tab[k] = L[i];
@@ -83,8 +91,8 @@ int	*ft_sort_with_merg(int *tab, int len)
 
 void	ft_find_duplicat(int *tab, int size) 
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
     while (i < size)
 	{

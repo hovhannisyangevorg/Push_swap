@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:29:27 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/06/20 13:49:05 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:19:13 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	ft_check_list_elem(char **sp, int len, t_list_c *list, int is_checker)
 		is_sorted = ft_if_sort(tab, len);
 	tab2 = ft_sort_with_merg(tab, len);
 	ft_find_duplicat(tab2, len);
-
 	if (!is_checker && is_sorted)
 	{
 		free(tab);

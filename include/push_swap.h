@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/06/19 23:11:39 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:25:12 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@
 #  define CHECKER 0
 # endif
 
-/*
-*
-* type aliases for structures
-*/
 typedef struct s_elem		t_elem;
 typedef struct s_node		t_node;
 typedef struct s_list_c		t_list_c;

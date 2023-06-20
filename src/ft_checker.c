@@ -6,11 +6,12 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:23:34 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/06/19 22:07:44 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:24:38 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
 * RETURN void
 *
@@ -69,21 +70,3 @@ int	main(int ac, char **av)
 		printf("KO");
 	return (0);
 }
-
-#if 0
-
-void	print_stack(t_list_c stack)
-{
-	t_node	*tmp;
-
-	tmp = stack.head;
-	while (tmp)
-	{
-		printf("%d[%d] ", tmp->data.data, tmp->data.index);
-		tmp = tmp->next;
-		if (tmp == stack.head)
-			break ;
-	}
-	printf("\n");
-}
-#endif
