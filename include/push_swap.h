@@ -6,7 +6,7 @@
 /*   By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 09:49:00 by gehovhan          #+#    #+#             */
-/*   Updated: 2023/06/19 22:06:21 by gehovhan         ###   ########.fr       */
+/*   Updated: 2023/06/19 23:11:39 by gehovhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,9 +131,7 @@ void		ft_print_stack(t_list_c stack);
 void		ft_swap(int *a, int *b);
 int			ft_if_sort(int *tab, int len);
 void		ft_panic(char *str);
-void 		ft_merge_sort(int *tab, int l, int r);
-void 		ft_merge(int *tab, int l, int m, int r);
-int			*ft_sort_with_merg(int *tab, int len);
+
 size_t		ft_support_atoi(const char *nptr, int sign, size_t i);
 int			ft_atoi_push(const char *nptr);
 void		ft_error_not_digit(const char *str, size_t index);
@@ -150,6 +148,12 @@ void		ft_butterfly_sort(t_push_swap *node);
 int			ft_list_find_max_index(t_push_swap *node);
 int			if_sort_list(t_push_swap *root);
 void		ft_push_helper(t_list_c *stack_b, t_node **elem, t_node **last);
+
+//
+void 		ft_merge_sort(int *tab, int l, int r);
+void 		ft_merge(int *tab, int l, int m, int r);
+int			*ft_sort_with_merg(int *tab, int len);
+void		ft_find_duplicat(int *arr, int size);
 
 //
 void		swap(t_list_c *stack, int is_stack_a);

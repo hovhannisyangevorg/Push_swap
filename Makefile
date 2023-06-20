@@ -6,7 +6,7 @@
 #    By: gehovhan <gehovhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 18:45:31 by gehovhan          #+#    #+#              #
-#    Updated: 2023/06/19 22:02:29 by gehovhan         ###   ########.fr        #
+#    Updated: 2023/06/19 23:15:38 by gehovhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CHECK_SRCS		= $(filter-out $(SRC_DIR)/main.c, $(ALL_SRCS))
 MAIN_SRCS		= $(filter-out $(SRC_DIR)/ft_checker.c, $(ALL_SRCS))
 INCS			= -I$(INC_DIR) -I$(FT_LIB)/include
 CFLAGS			= -Wall -Wextra -Werror 
-CC				= cc
+CC				= cc -g -ggdb
 MK				= mkdir -p
 RM				= rm -rf
 MAIN_OBJS		= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/$(MAIN_DIR)/%.o, $(MAIN_SRCS))
